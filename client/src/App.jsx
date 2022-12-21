@@ -1,8 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import { MantineProvider } from "@mantine/core";
 
 import "./index.css";
+import Chat from "./Chat";
 
-const App = () => <div>Hi there, I'm React from Webpack 5.</div>;
+const App = () => (
+  <MantineProvider withGlobalStyles withNormalizeCSS>
+    <Chat />
+  </MantineProvider>
+);
 
-ReactDOM.render(<App />, document.getElementById("app"));
+const root = ReactDOM.createRoot(document.getElementById("app"));
+
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

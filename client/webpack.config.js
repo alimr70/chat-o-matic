@@ -16,8 +16,7 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.m?js/,
         type: "javascript/auto",
         resolve: {
@@ -60,4 +59,5 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
+  devtool: "eval-cheap-source-map"
 };
